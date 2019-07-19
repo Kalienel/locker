@@ -15,9 +15,12 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
-  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
-  { path: 'registrar', loadChildren: './pages/registrar/registrar.module#RegistrarPageModule' },
-  { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' }
+  { path: '', loadChildren: './pages/login/login.module#LoginPageModule' },
+  //{ path: 'registrar', loadChildren: './pages/registrar/registrar.module#RegistrarPageModule' },
+  { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
+  { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
+  { path: 'dashboard', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },
+  { path: 'registrar', loadChildren: './pages/registrar/registrar.module#RegistrarPageModule' }
 ];
 
 @NgModule({

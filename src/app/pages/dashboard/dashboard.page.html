@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center">Área administrativa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        Bem-vindo ao mundo Locker!
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        Seu e-mail cadastrado é : {{userEmail}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>  
+  
+  
+</ion-content>
+<ion-footer (click)="logout()">
+  <ion-toolbar color="secondary">
+    <ion-title>Sair</ion-title>
+  </ion-toolbar>
+</ion-footer>
