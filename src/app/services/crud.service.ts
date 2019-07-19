@@ -11,15 +11,19 @@ export class CrudService {
     private firestore: AngularFirestore
   ) { }
 
-  criar_restaurantes(record) {
+  create_Restaurante(record) {
     return this.firestore.collection('restaurantes').add(record);
   }
 
-  ler_restaurantes() {
+  read_Restaurante() {
     return this.firestore.collection('restaurantes').snapshotChanges();
   }
 
-  deletar_restaurantes(recordId) {
+  update_Restaurante(recordID, record) {
+    this.firestore.doc('restaurantes/' + recordID).update(record);
+  }
+
+  delete_Restaurante(recordId) {
     this.firestore.doc('restaurantes/' + recordId).delete();
   }
 

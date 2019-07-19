@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title style="text-align: center">Área administrativa</ion-title>
+    <ion-title text-center>Área administrativa</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,7 +17,71 @@
         Seu e-mail cadastrado é : {{userEmail}}
       </ion-col>
     </ion-row>
-  </ion-grid>  
+    <ion-row>
+      <ion-col text-center>
+        Veja abaixo seus estabelecimentos
+      </ion-col>
+    </ion-row>
+
+    <ion-item *ngFor="let item of restaurantes" class="item">
+      <ion-avatar slot="start">
+        <img src="{{item.Capa}}">
+      </ion-avatar>
+    <div class="detalhes">
+      <ion-label text-wrap class="nome">{{item.Nome}}</ion-label>
+      <ion-label text-wrap class="tipo">{{item.Tipo}}</ion-label>
+      <ion-label text-wrap class="dist">{{item.Dist}} m</ion-label>
+    </div>
+    <div style="white-space: nowrap" class="avancar">
+      <ion-icon class="icon" style="color:#eded07; margin-left:2px" name="star"></ion-icon>
+      <p style="color:#eded07">{{item.Estrelas}}</p>
+    </div>
+    <ion-button shape="round" color="danger" size="small" (click)="RemoveRecord(item.id)">
+      <ion-icon size="small" slot="icon-only" name="trash"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <ion-row>
+    <ion-col text-center>
+      E adicione novos também:
+    </ion-col>
+  </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Digite o Nome" [(ngModel)]="restauranteNome"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-select placeholder="Selecione o Tipo" [(ngModel)]="restauranteTipo">
+            <ion-select-option value="Frutos do Mar">Frutos do Mar</ion-select-option>
+            <ion-select-option value="Lanches">Lanches</ion-select-option>
+            <ion-select-option value="Petiscos">Petiscos</ion-select-option>
+            <ion-select-option value="Drinks">Drinks</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Digite a Descrição" [(ngModel)]="restauranteDesc"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <ion-button (click)="CreateRecord()" [disabled]="!restauranteNome || !restauranteTipo || !restauranteDesc">
+          <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
+          &nbsp;Adicionar Estabelecimento 
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   
   
 </ion-content>
