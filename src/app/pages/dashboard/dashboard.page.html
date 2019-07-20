@@ -18,7 +18,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-item *ngFor="let item of restaurantes" class="item" (click)="verEstab(item)" [routerLink]="['/estabelecimento']">
+    <ion-item *ngFor="let item of restaurantes" class="item">
       <ion-avatar slot="start">
         <img src="{{item.Capa}}">
       </ion-avatar>
@@ -57,6 +57,8 @@
             <ion-select-option value="Lanches">Lanches</ion-select-option>
             <ion-select-option value="Petiscos">Petiscos</ion-select-option>
             <ion-select-option value="Drinks">Drinks</ion-select-option>
+            <ion-select-option value="Bebidas">Bebidas</ion-select-option>
+            <ion-select-option value="Vegetariano">Vegetariano</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>
