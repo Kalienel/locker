@@ -19,7 +19,10 @@ const routes: Routes = [
   { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
   { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
   { path: '', loadChildren: './pages/dashboard/dashboard.module#DashboardPageModule' },
-  { path: 'registrar', loadChildren: './pages/registrar/registrar.module#RegistrarPageModule' }
+  { path: 'registrar', loadChildren: './pages/registrar/registrar.module#RegistrarPageModule' },
+  { path: 'status', loadChildren: './page/status/status.module#StatusPageModule' },
+  { path: 'estabelecimento/:item', loadChildren: './pages/estabelecimento/estabelecimento.module#EstabelecimentoPageModule' },
+  { path: 'estoque', loadChildren: './pages/estoque/estoque.module#EstoquePageModule' }
 ];
 
 @NgModule({

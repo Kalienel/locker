@@ -14,16 +14,11 @@
     </ion-row>
     <ion-row>
       <ion-col text-center>
-        Seu e-mail cadastrado é : {{userEmail}}
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col text-center>
         Veja abaixo seus estabelecimentos
       </ion-col>
     </ion-row>
 
-    <ion-item *ngFor="let item of restaurantes" class="item">
+    <ion-item *ngFor="let item of restaurantes" class="item" (click)="verEstab(item)" [routerLink]="['/estabelecimento']">
       <ion-avatar slot="start">
         <img src="{{item.Capa}}">
       </ion-avatar>
@@ -31,14 +26,14 @@
       <ion-label text-wrap class="nome">{{item.Nome}}</ion-label>
       <ion-label text-wrap class="tipo">{{item.Tipo}}</ion-label>
       <ion-label text-wrap class="dist">{{item.Dist}} m</ion-label>
+      <ion-button shape="round" color="danger" size="small" (click)="Confirmar(item.id)">
+        <ion-icon size="small" slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
     </div>
     <div style="white-space: nowrap" class="avancar">
       <ion-icon class="icon" style="color:#eded07; margin-left:2px" name="star"></ion-icon>
       <p style="color:#eded07">{{item.Estrelas}}</p>
     </div>
-    <ion-button shape="round" color="danger" size="small" (click)="RemoveRecord(item.id)">
-      <ion-icon size="small" slot="icon-only" name="trash"></ion-icon>
-    </ion-button>
   </ion-item>
 
   <ion-row>

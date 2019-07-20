@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController } from '@ionic/angular';
+import { NavController, ModalController, AlertController } from '@ionic/angular';
 import { AuthenticateService } from '../../services/auth.service';
 import { CrudService } from '../../services/crud.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +26,9 @@ export class DashboardPage implements OnInit {
   constructor(
     private navCtrl: NavController,
     private authService: AuthenticateService,
-    private crudService: CrudService
+    private crudService: CrudService,
+    public alertController: AlertController,
+    private router: Router,
   ) {}
 
   ngOnInit(){
@@ -64,6 +67,34 @@ export class DashboardPage implements OnInit {
     .catch(error => {
       console.log(error);
     })
+  }
+
+  verEstab(item) {
+    this.router.navigateByUrl('/estabelecimento/' + item.id);
+  }
+
+  async Confirmar(i) {
+    const alert = await this.alertController.create({
+      header: 'DELETAR ESTABELECIMENTO!',
+      message: 'Deseja apagar seu estabelecimento do sistema? <strong>Essa são não pode ser revertida</strong>!!!',
+      buttons: [
+        {
+          text: 'Deletar',
+          role: 'delete',
+          cssClass: 'secondary',
+          handler: () => {
+            this.RemoveRecord(i)  ;
+          }
+        }, {
+          text: 'Voltar',
+          handler: () => {
+            console.log('Voltou');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
   CreateRecord() {
