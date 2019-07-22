@@ -22,7 +22,8 @@ const routes: Routes = [
   { path: 'registrar', loadChildren: './pages/registrar/registrar.module#RegistrarPageModule' },
   { path: 'status', loadChildren: './page/status/status.module#StatusPageModule' },
   { path: 'estabelecimento/:item', loadChildren: './pages/estabelecimento/estabelecimento.module#EstabelecimentoPageModule' },
-  { path: 'estoque', loadChildren: './pages/estoque/estoque.module#EstoquePageModule' }
+  { path: 'estoque', loadChildren: './pages/estoque/estoque.module#EstoquePageModule' },
+  { path: 'confirmada', loadChildren: './pages/confirmada/confirmada.module#ConfirmadaPageModule' }
 ];
 
 @NgModule({

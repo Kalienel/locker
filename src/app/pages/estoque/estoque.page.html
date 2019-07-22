@@ -5,5 +5,67 @@
 </ion-header>
 
 <ion-content>
+    <div class="ion-padding">
+        <ion-card>
+          <ion-card-header>
+            Estoque
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #barCanvas></canvas>
+          </ion-card-content>
+        </ion-card>
+    </div>
+
+    <ion-list>
+      <ion-item>
+        <ion-col>
+            <p>Batata (pacote)</p>
+        </ion-col>
+        <ion-col>
+            <ion-input type="number" placeholder="Quantidade"></ion-input>
+        </ion-col>
+        <ion-col>
+            <ion-button (click)="alerta()">Comprar</ion-button>
+        </ion-col>
+        
+      </ion-item>
+
+      <ion-item>
+          <ion-col>
+              <p>Refrigerante (latinha)</p>
+          </ion-col>
+          <ion-col>
+              <ion-input type="number" placeholder="Quantidade"></ion-input>
+          </ion-col>
+          <ion-col>
+              <ion-button (click)="alerta()">Comprar</ion-button>
+          </ion-col>
+      </ion-item>
+
+      <ion-item>
+          <ion-col>
+              <p>Salgadinho (porção)</p>
+          </ion-col>
+          <ion-col>
+              <ion-input type="number" placeholder="Quantidade"></ion-input>
+          </ion-col>
+          <ion-col>
+              <ion-button (click)="alerta()">Comprar</ion-button>
+          </ion-col>
+      </ion-item>
+
+      <ion-item>
+          <ion-col>
+              <p>Cerveja (latinha)</p>
+          </ion-col>
+          <ion-col>
+              <ion-input type="number" placeholder="Quantidade"></ion-input>
+          </ion-col>
+          <ion-col>
+              <ion-button (click)="alerta()">Comprar</ion-button>
+          </ion-col>
+      </ion-item>
+
+    </ion-list>
 
 </ion-content>

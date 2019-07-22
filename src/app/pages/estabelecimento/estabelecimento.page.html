@@ -1,10 +1,51 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{ nome }}</ion-title>
+    <ion-title>
+        <ion-label>{{ nome }}</ion-label>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  {{ nome }}
-  <ion-button [routerLink]="['/estoque']" > Estoque </ion-button>
+
+  <ion-row>
+    <ion-col><ion-label>Faturamento Atual </ion-label></ion-col>
+    <ion-col><ion-label>Despesas Atuais </ion-label></ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col><ion-label style="color:green">R$12543,87 </ion-label></ion-col>
+    <ion-col><ion-label style="color:red">R$4354,93 </ion-label></ion-col>
+  </ion-row>
+
+  <ion-button expand="full" [routerLink]="['/estoque']" > Estoque </ion-button>
+
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        Vendas de Produtos
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Representação das vendas 
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Faturamento
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
